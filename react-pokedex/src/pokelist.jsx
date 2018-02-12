@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
+
 import './App.css';
 
 class PokeList extends Component {
-  // console.log('array.results', array)
-
   render() {
     const array = this.props.pokeinfo.results;
     return (
@@ -15,7 +13,10 @@ class PokeList extends Component {
             {this.props.pokeinfo &&
               array.map((ele, indx) => {
                 return (
-                  <button onClick={this.handleChange} key={indx}>
+                  <button
+                    onClick={this.props.handleChange}
+                    value={ele.url}
+                    key={indx}>
                     {ele.name}
                   </button>
                 );
